@@ -12,17 +12,17 @@ document.addEventListener('DOMContentLoaded', function() {
     body.classList.add(savedTheme);
   }
 
-  themeToggle.addEventListener('click', function() {
-    if (body.classList.contains('light-mode')) {
-      body.classList.remove('light-mode');
-      body.classList.add('dark-mode');
-      localStorage.setItem('theme', 'dark-mode');
-    } else {
-      body.classList.remove('dark-mode');
-      body.classList.add('light-mode');
-      localStorage.setItem('theme', 'light-mode');
-    }
-  });
+  // themeToggle.addEventListener('click', function() {
+  //   if (body.classList.contains('light-mode')) {
+  //     body.classList.remove('light-mode');
+  //     body.classList.add('dark-mode');
+  //     localStorage.setItem('theme', 'dark-mode');
+  //   } else {
+  //     body.classList.remove('dark-mode');
+  //     body.classList.add('light-mode');
+  //     localStorage.setItem('theme', 'light-mode');
+  //   }
+  // });
 
   // Navbar scroll behavior
   const navbar = document.getElementById('mainNav');
