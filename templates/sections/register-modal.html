@@ -10,20 +10,20 @@
                 <form method="POST" action="{% url 'register' %}">
                     {% csrf_token %}
                     <div class="mb-4">
-                        <label for="name" class="form-label">Name</label>
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+                        <label for="register_name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="register_name" name="register_name" placeholder="Enter your name" required>
                     </div>
                     <div class="mb-4">
-                        <label for="phone" class="form-label">Phone Number</label>
-                        <input type="text" class="form-control" id="phone" name="phone" placeholder="Enter your phone number" required>
+                        <label for="register_phone" class="form-label">Phone Number</label>
+                        <input type="text" class="form-control" id="register_phone" name="register_phone" placeholder="Enter your phone number" required>
                     </div>
                     <div class="mb-4">
-                        <label for="email" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" required>
+                        <label for="register_email" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="register_email" name="register_email" placeholder="name@example.com" required>
                     </div>
                     <div class="mb-4">
-                        <label for="password" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="password" name="password" placeholder="Create a password" required>
+                        <label for="register_password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="register_password" name="register_password" placeholder="Create a password" required>
                     </div>
                     <button type="submit" class="btn btn-primary w-100">Register</button>
                 </form>
