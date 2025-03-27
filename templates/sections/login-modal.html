@@ -1,0 +1,35 @@
+<!-- Login Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+          <div class="modal-header border-0">
+              <h5 class="modal-title" id="loginModalLabel">Welcome Back</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <form method="POST" action="{% url 'login' %}">
+                  {% csrf_token %}
+                  <div class="mb-4">
+                      <label for="email" class="form-label">Email address</label>
+                      <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" required>
+                  </div>
+                  <div class="mb-4">
+                      <label for="password" class="form-label">Password</label>
+                      <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
+                  </div>
+                  <div class="mb-4 form-check">
+                      <input type="checkbox" class="form-check-input" id="remember" name="remember">
+                      <label class="form-check-label" for="remember">Remember me</label>
+                  </div>
+                  <button type="submit" class="btn btn-primary w-100">Sign In</button>
+              </form>
+              <div class="mt-4 text-center">
+                  <a href="#" class="text-decoration-none">Forgot password?</a>
+              </div>
+              <div class="mt-2 text-center">
+                  <p>Don’t have an account? <a href="#" data-bs-toggle="modal" data-bs-dismiss="modal" data-bs-target="#registerModal" class="text-decoration-none">Register yourself</a></p>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

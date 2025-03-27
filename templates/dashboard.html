@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+
+{% block custom-css %}
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/static/css/styles.css">
+{% endblock custom-css %}
+
+
+{% block main-page %}
+
+  <!-- Navigation Bar -->
+    {% include "sections/navbar.html" %}
+
+    {% if user.is_authenticated %}
+	
+	<p>Name: {{ user.name }}</p>
+	<p>Phone: {{ user.phone}}</p>
+	<p>Email: {{ user.email }}</p>
+	
+    {% endif %}
+
+{% endblock main-page %}
