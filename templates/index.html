@@ -1,67 +1,41 @@
+<!-- index.html -->
 {% extends "base.html" %}
 
-
 {% block custom-css %}
-  <!-- Custom CSS -->
   <link rel="stylesheet" href="/static/css/styles.css">
 {% endblock custom-css %}
 
-
 {% block main-page %}
-
   <!-- Navigation Bar -->
   {% include "sections/navbar.html" %}
-  
+
   {% if messages %}
     <div class="container mt-3">
-        {% for message in messages %}
-            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
-                {{ message }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        {% endfor %}
+      {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+          {{ message }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      {% endfor %}
     </div>
   {% endif %}
-    
-  <!-- AUthentication Modals -->
-  {% include 'sections/login-modal.html' %}
-  {% include 'sections/register-modal.html' %}
-  
-  
-  <!-- Hero Section -->
+
+  <!-- Authentication Modals -->
+  {% include 'sections/login-modal.html' with login_form=form %}
+  {% include 'sections/register-modal.html' with register_form=form %}
+
+  <!-- Other sections -->
   {% include "sections/hero-section.html" %}
-
-  <!-- About Section -->
-  <!-- {% include "sections/about.html" %} -->
-  
-  <!-- Features Section -->
   {% include "sections/features.html" %}
- 
-  <!-- Crop Prediction Section -->
   {% include "sections/crop-prediction.html" %}
-  
-  <!-- Fertilizer Prediction Section -->
-  {% comment %} {% include "sections/fertilizer-prediction.html" %} {% endcomment %}
-
-  <!-- Disease Prediction Section -->
   {% include "sections/disease-prediction.html" %}
-
-  <!-- Chatbot Section -->
   {% include "sections/chatbot.html" %}
-
-  <!-- Testimonials Section -->
   {% include "sections/testimonials.html" %}
-
-  <!-- Contact Section -->
   {% include "sections/contact.html" %}
-
-  <!-- Footer -->
   {% include "sections/footer.html" %}
 
 {% endblock main-page %}
 
-
 {% block custom-js %}
   <script src="/static/js/script.js"></script>
-  <script src="/static/js/modal-script.js"></script>
 {% endblock custom-js %}

@@ -1,4 +1,4 @@
-<!-- Registration Modal -->
+<!-- register-modal.html -->
 <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -9,22 +9,7 @@
             <div class="modal-body">
                 <form method="POST" action="{% url 'register' %}">
                     {% csrf_token %}
-                    <div class="mb-4">
-                        <label for="register_name" class="form-label">Name</label>
-                        <input type="text" class="form-control" id="register_name" name="register_name" placeholder="Enter your name" required>
-                    </div>
-                    <div class="mb-4">
-                        <label for="register_phone" class="form-label">Phone Number</label>
-                        <input type="text" class="form-control" id="register_phone" name="register_phone" placeholder="Enter your phone number" required>
-                    </div>
-                    <div class="mb-4">
-                        <label for="register_email" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="register_email" name="register_email" placeholder="name@example.com" required>
-                    </div>
-                    <div class="mb-4">
-                        <label for="register_password" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="register_password" name="register_password" placeholder="Create a password" required>
-                    </div>
+                    {{ register_form.as_p }}
                     <button type="submit" class="btn btn-primary w-100">Register</button>
                 </form>
                 <div class="mt-4 text-center">
