@@ -1,8 +1,8 @@
-from django.shortcuts import render, redirect
+# Code from above
 from django.http import HttpResponse
 from django.contrib.auth.models import User as user
 from django.contrib import messages
-from .forms import RegisterForm, LoginForm
+from home.forms import RegisterForm, LoginForm
 from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
 
 # Create your views here.
@@ -57,3 +57,6 @@ def logout_user(request):
     logout(request)
     messages.success(request, 'You Have Been Logged Out...')
     return redirect('index')
+
+def dashboard(request):
+    return render(request, 'dashboard.html')

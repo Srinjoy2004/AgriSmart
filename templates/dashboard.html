@@ -10,14 +10,15 @@
 {% block main-page %}
 
   <!-- Navigation Bar -->
-    {% include "sections/navbar.html" %}
+  {% include "sections/navbar.html" %}
 
-    {% if user.is_authenticated %}
-	
-	<p>Name: {{ user.name }}</p>
-	<p>Phone: {{ user.phone}}</p>
-	<p>Email: {{ user.email }}</p>
-	
-    {% endif %}
+  <!-- Main Content -->
+  {% include "sections/demo-dashboard.html" %}
+
+  {% include "sections/user-details.html" %}
 
 {% endblock main-page %}
+
+{% block custom-js %}
+  <script src="/static/js/script.js"></script>
+{% endblock custom-js %}
